@@ -14,11 +14,9 @@ app.get('/ping', (req, res) => {
   }
   catch (error) {
     console.error(error.message);
-    res.status(400).send(error.message);
+    res.status(400).send(message,"Email cannot be empty!",error.error);
   }
-});
 
-app.get('/ping', (req, res) => {
   try {
     const { password } = req.query;
     if (!password) {
@@ -28,6 +26,6 @@ app.get('/ping', (req, res) => {
   }
   catch (error) {
     console.error(error.message);
-    res.status(400).send(error.message);
+    res.status(400).send(msg,"password cannot be empty!",error.error);
   }
-} );
+});
